@@ -128,7 +128,7 @@ class AI:
                     
                     # threat
                     else:
-                        eval += attacked.piece.value / 15
+                        eval += attacked.piece.value / 45
 
         return eval
 
