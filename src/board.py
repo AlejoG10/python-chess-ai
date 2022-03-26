@@ -6,10 +6,10 @@ from square import Square
 class Board:
 
     def __init__(self):
+        self.squares = []
         self._create()
         self._add_pieces('white')
         self._add_pieces('black')
-        self.valid_moves = []
         self.last_move = None
 
     def __str__(self):
