@@ -99,7 +99,7 @@ class Board:
                     if self.squares[move_row][col].isempty():
                         # new move
                         initial = Square(row, col)
-                        final = Square(move_row, col)
+                        final = Square(move_row, col, self.squares[move_row][col].piece)
                         move = Move(initial, final)
                         piece.add_move(move)
                     else: break
@@ -113,7 +113,7 @@ class Board:
                     if self.squares[move_row][move_col].has_rival_piece(piece.color):
                         # new move
                         initial = Square(row, col)
-                        final = Square(move_row, move_col)
+                        final = Square(move_row, move_col, self.squares[move_row][move_col].piece)
                         move = Move(initial, final)
                         piece.add_move(move)
         
@@ -136,7 +136,7 @@ class Board:
                     if self.squares[move_row][move_col].isempty_or_rival(piece.color):
                         # new move
                         initial = Square(row, col)
-                        final = Square(move_row, move_col)
+                        final = Square(move_row, move_col, self.squares[move_row][move_col].piece)
                         move = Move(initial, final)
                         piece.add_move(move)
 
@@ -149,7 +149,7 @@ class Board:
                     if Square.in_range(move_row, move_col):
                         # move
                         initial = Square(row, col)
-                        final = Square(move_row, move_col)
+                        final = Square(move_row, move_col, self.squares[move_row][move_col].piece)
                         move = Move(initial, final)
                         # empty
                         if self.squares[move_row][move_col].isempty():
@@ -187,7 +187,7 @@ class Board:
                     if self.squares[move_row][move_col].isempty_or_rival(piece.color):
                         # new move
                         initial = Square(row, col)
-                        final = Square(move_row, move_col)
+                        final = Square(move_row, move_col, self.squares[move_row][move_col].piece)
                         move = Move(initial, final)
                         piece.add_move(move)
                 
@@ -236,7 +236,7 @@ class Board:
 
         elif piece.name == 'king': 
             king()
-
+                        
     # ------------
     # INIT METHODS
     # ------------

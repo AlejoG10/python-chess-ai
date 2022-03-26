@@ -157,7 +157,7 @@ class Main:
                 elif event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            
+
             pygame.display.update()
     
 if __name__ == '__main__':
